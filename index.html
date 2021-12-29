@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="one page, business template, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+    <meta charset="utf-8">
+    <!-- Site Title -->
+    <title>資租必較 House for you</title>
+    <!--
+        Google Fonts
+        ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--
+        CSS
+        ============================================= -->
+
+    <link rel="stylesheet" href="template/mystyle.css">
+
+
+</head>
+
+<body style="font-family:  Microsoft JhengHei;">
+
+    <!--
+        Fixed Navigation
+        ==================================== -->
+    <header id="navigation" class="navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <!-- /responsive nav button -->
+
+                <!-- logo -->
+                <h1 class="navbar-brand">
+                    <b onclick="gototemp()" style="font-family: Vladimir Script ;font-size:48px;color:white;margin-left:30px">House</b>
+                </h1>
+                <!-- /logo -->
+
+            </div>
+
+            <!-- main nav -->
+            <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
+                <div class="carousel slide" data-interval="false">
+                    <ul id="nav" class="nav navbar-nav" style="font-family:  Microsoft JhengHei;">
+                        <li onclick="changeTo(11)" id="m1" data-target="#home-carousel" data-slide-to="0" class="current"><a href="#home">首頁</a></li>
+                        <li onclick="changeTo(12)" id="m2" data-target="#home-carousel" data-slide-to="1"><a href="#system">系統概述</a></li>
+                        <li onclick="changeTo(13)" id="m3" data-target="#home-carousel" data-slide-to="2"><a href="#intro">操作說明</a></li>
+                        <li onclick="changeTo(14)" id="m4" data-target="#home-carousel" data-slide-to="3"><a href="#about">關於我們</a></li>
+                    </ul>
+            </nav>
+            </div>
+            <!-- /main nav -->
+        </div>
+
+        </div>
+    </header>
+
+
+    <!--
+        Home Slider
+        ==================================== -->
+    <section id="home">
+        <div id="home-carousel" class="carousel slide" data-interval="false">
+            <ol class="carousel-indicators">
+                <li onclick="changeTo(1)" id="l1" data-target="#home-carousel" data-slide-to="0" class="active"></li>
+                <li onclick="changeTo(2)" id="l2" data-target="#home-carousel" data-slide-to="1"></li>
+                <li onclick="changeTo(3)" id="l3" data-target="#home-carousel" data-slide-to="2"></li>
+                <li onclick="changeTo(4)" id="l4" data-target="#home-carousel" data-slide-to="3"></li>
+            </ol>
+            <!--/.carousel-indicators-->
+
+            <div class="carousel-inner">
+
+                <div id="p1" class="item active" style="background-image: url('1.png')">
+                    <div class="carousel-caption">
+                        <div class="animated bounceInRight">
+                            <h2>資租必較</h2>
+                            <p>HOUSE FOR YOU </p>
+                            <a href="main.html">
+                                <p><b><u><em style="font-size: 20px">Get start</em></u></b></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="p2" class="item" style="background-image: url('3.jpg')">
+                    <div class="carousel-caption">
+                        <div class="animated bounceInDown">
+                            <h2>系統概述</h2>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本系統利用TF-IDF、TF-PDF和Elo &nbsp; Rating量化房屋資訊，並藉由政府公開資料集取得各個房屋所在之區位訊息。再者，透過K-MEANS結合Elo &nbsp;Rating的概念，在使用者反覆兩兩比較房屋時，探索其喜好之潛在因素，以建立個人化CP值公式。最後，考量到租屋人數，本系統提供多點通勤規劃，根據多個通勤時間，地點及交通方式，尋找最佳租屋位置。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="p3" class="item" style="background-image: url('4.jpg');">
+                    <div class="carousel-caption">
+                        <div class="animated bounceInUp">
+                            <h2>操作說明</h2>
+                            <p>1.填入居住成員之上班地點<br>2.選取各個通勤之工具<br>3.輸入可以接受的通勤時間<br>4.在兩兩房屋中，重複選取5次您願意租的房屋</p>
+                            <p>以上步驟完成後，系統將會推薦適合您的房子以供參考。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="p4" class="item" style="background-image: url('5.jpg')">
+                    <div class="carousel-caption">
+                        <div class="animated bounceInDown">
+                            <h2>關於我們</h2>
+                            <p>專題名稱 &nbsp;:&nbsp; 資租必較<br> 聯絡方式&nbsp;:&nbsp;082435@mail.fju.edu.tw
+                                <br> 校名與科系&nbsp;：&nbsp;輔仁大學&nbsp; 統計資訊學系<br> 指導教師&nbsp;：&nbsp;杜逸寧教授
+                                <br> 團員成員&nbsp;：&nbsp;余惠暄、林宛萱、江柏學、張芝綺、林威廷、王柔諭、徐紫絨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.carousel-inner-->
+            <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
+                <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev" onclick="changeTo('back')">
+                    <i class="fa fa-angle-left fa-3x"></i>
+                </a>
+                <a class="sl-next" href="#home-carousel" data-slide="next" onclick="changeTo('next')">
+                    <i class="fa fa-angle-right fa-3x"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+    </section>
+
+    <!--
+        JavaScripts
+        ========================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="template/myjs.js"></script>
+</body>
+
+</html>

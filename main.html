@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAHGqypVNpShrz4KuSYt10WErquMn-FaSM"></script>
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/mycss.css" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="js/map.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/algorithm.js"></script>
+    <title>資租必較 - 推薦系統</title>
+</head>
+
+
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <section>
+        <div class="container" id="p1">
+            <!--<button id="deletMe" onclick="changePage()"></button>-->
+            <div class="row">
+                <div class="board" style="background:rgb(255, 255, 255,0.7)">
+                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                    <div class="board-inner">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <div id="line" class="liner"></div>
+                            <li class="active">
+                                <a id="goprofile" href="#profile" data-toggle="tab" title="profile" style="pointer-events: none;border-radius: 100%;">
+                                    <span id="s1" class="round-tabs one">
+                                     <i class="glyphicon glyphicon-home" style="top: 10px;"></i>
+                                 </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a id="gomessages" href="#messages" data-toggle="tab" title="bootsnipp goodies" style="pointer-events: none;border-radius: 100%;">
+                                    <span id="s2" class="round-tabs two">
+                                                 <i class="glyphicon glyphicon-plane" style="top: 10px;"></i>
+                                            </span> </a>
+                            </li>
+                            <li>
+                                <a id="gohome" href="#home" data-toggle="tab" title="welcome" style="pointer-events: none;border-radius: 100%;">
+                                    <span id="s3" class="round-tabs three">
+                                              <i class="glyphicon glyphicon-user" style="top: 10px;"></i>
+                                      </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a id="godoner" href="#doner" data-toggle="tab" title="completed" style="pointer-events: none;border-radius: 100%;">
+                                    <span id="s4" class="round-tabs five">
+                                              <i class="glyphicon glyphicon-ok" style="top: 10px;"></i>
+                                         </span> </a>
+                            </li>
+
+                            <li>
+                                <a id="goend" href="#end" data-toggle="tab" title="trueend" style="pointer-events: none;border-radius: 100%;">
+                                    <span id="s5" class="round-tabs six">
+                                     <i class="glyphicon glyphicon-flag" style="top: 10px;"></i>
+                                 </span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade in active" id="profile">
+                            <h4>請輸入目的地</h4>
+                            <hr>
+
+                            <div class="input-group input-group-md" id="area_div1">
+                                <span class="input-group-addon" id="add1" onclick="add()" style="cursor: pointer;">+</span>
+                                <span class="input-group-addon" id="delete1" onclick="Delete(1)" style="cursor: pointer;">–</span>
+                                <input id="area1" type="text" class="form-control" placeholder="請輸入目的地" aria-describedby="sizing-addon1">
+                            </div>
+                            <br>
+                            <div class="input-group input-group-md" style="display:none;" id="area_div2">
+                                <span class="input-group-addon" id="add2" onclick="add()" style="cursor: pointer;">+</span>
+                                <span class="input-group-addon" id="delete2" onclick="Delete(2)" style="cursor: pointer;">–</span>
+                                <input id="area2" type="text" class="form-control" placeholder="請輸入目的地" aria-describedby="sizing-addon1">
+                            </div>
+                            <br>
+                            <div class="input-group input-group-md " style="display:none;" id="area_div3">
+                                <span class="input-group-addon" id="add3" onclick="add()" style="cursor: pointer;">+</span>
+                                <span class="input-group-addon" id="delete3" onclick="Delete(3)" style="cursor: pointer;">–</span>
+                                <input id="area3" type="text" class="form-control" placeholder="請輸入目的地" aria-describedby="sizing-addon1">
+                            </div>
+                            <br>
+                            <div class="input-group input-group-md" style="display:none;" id="area_div4">
+                                <span class="input-group-addon" id="add4" onclick="add()" style="cursor: pointer;">+</span>
+                                <span class="input-group-addon" id="delete4" onclick="Delete(4)" style="cursor: pointer;">–</span>
+                                <input id="area4" type="text" class="form-control" placeholder="請輸入目的地" aria-describedby="sizing-addon1">
+                            </div>
+                            <br>
+                            <div class="input-group input-group-md" style="display:none;" id="area_div5">
+                                <span class="input-group-addon" id="add5" onclick="add()" style="cursor: pointer;">+</span>
+                                <span class="input-group-addon" id="delete5" onclick="Delete(5)" style="cursor: pointer;">–</span>
+                                <input id="area5" type="text" class="form-control" placeholder="請輸入目的地" aria-describedby="sizing-addon1">
+                            </div>
+
+
+                        </div>
+
+                        <div class="tab-pane fade" id="messages">
+                            <h4>請選擇交通方式</h4>
+                            <hr>
+                            <div class="col-md-12">
+                                <form class="form-horizontal" role="form">
+                                    <div id="trans1" class="form-group " style="display:none">
+                                        <label for="filter" id='areaLabel1'></label>
+                                        <select class="form-control" id="transWay1">
+                                                <option selected="selected" style='display: none' value='none'></option>
+                                                <option style="background-color: rgba(255, 238, 220, 0.5)" value="DRIVING">開車</option>
+                                                <option style="background-color: rgba(255, 238, 220, 0.5)"  value="WALKING" >步行</option>
+                                                <option style="background-color: rgba(255, 238, 220, 0.5)"  value="TRANSIT">大眾運輸</option>                                        
+                                            </select>
+                                    </div>
+
+                                    <div id="trans2" class="form-group" style="display:none">
+                                        <label for="filter" id='areaLabel2'></label>
+                                        <select class="form-control" id="transWay2">
+                                            <option selected="selected" style='display: none' value='none'></option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)" value="DRIVING" >開車</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="WALKING">步行</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="TRANSIT">大眾運輸</option>                                        
+                                        
+                                                </select>
+                                    </div>
+
+                                    <div id="trans3" class="form-group" style="display:none">
+                                        <label for="filter" id='areaLabel3'></label>
+                                        <select class="form-control" id="transWay3">
+                                            <option selected="selected" style='display: none' value='none'></option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)" value="DRIVING">開車</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="WALKING">步行</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="TRANSIT">大眾運輸</option>                                        
+                                        
+                                                    </select>
+                                    </div>
+                                    <div id="trans4" class="form-group" style="display:none">
+                                        <label for="filter" id='areaLabel4'></label>
+                                        <select class="form-control" id="transWay4">
+                                            <option selected="selected" style='display: none' value='none'></option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)" value="DRIVING">開車</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="WALKING">步行</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="TRANSIT">大眾運輸</option>                                        
+                                         
+                                                        </select>
+                                    </div>
+                                    <div id="trans5" class="form-group" style="display:none">
+                                        <label for="filter" id='areaLabel5'></label>
+                                        <select class="form-control" id="transWay5">
+                                            <option selected="selected" style='display: none' value='none'></option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)" value="DRIVING">開車</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="WALKING">步行</option>
+                                            <option style="background-color: rgba(255, 238, 220, 0.5)"  value="TRANSIT">大眾運輸</option>                                        
+                                              
+                                                </select>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="home">
+                            <h4>請輸入可接受通勤時間</h4>
+                            <hr>
+
+                            <div id="time1" class="form-group" style="display:none">
+                                <label class="col-sm-6 control-label" for="jmlPemulaPutra" id="timeLabel1"></label>
+                                <div class="col-sm-3">
+                                    <input id="timeInput1" name="jmlPemulaPutra" type="text" placeholder="可接受通勤時間(分鐘)" class="form-control input-md" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                </div>
+                                <span class="help-block">例:20</span>
+                            </div>
+                            <br>
+                            <div id="time2" class="form-group" style="display:none">
+                                <label class="col-sm-6 control-label" for="jmlPemulaPutra" id="timeLabel2"></label>
+                                <div class="col-sm-3">
+                                    <input id="timeInput2" name="jmlPemulaPutra" type="text" placeholder="可接受通勤時間(分鐘)" class="form-control input-md" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                </div>
+                                <span class="help-block">例:20</span>
+                            </div>
+                            <br>
+                            <div id="time3" class="form-group" style="display:none">
+                                <label class="col-sm-6 control-label" for="jmlPemulaPutra" id="timeLabel3"></label>
+                                <div class="col-sm-3">
+                                    <input id="timeInput3" name="jmlPemulaPutra" type="text" placeholder="可接受通勤時間(分鐘)" class="form-control input-md" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                </div>
+                                <span class="help-block">例:20</span>
+                            </div>
+                            <br>
+                            <div id="time4" class="form-group" style="display:none">
+                                <label class="col-sm-6 control-label" for="jmlPemulaPutra" id="timeLabel4"></label>
+
+                                <div class="col-sm-3">
+                                    <input id="timeInput4" name="jmlPemulaPutra" type="text" placeholder="可接受通勤時間(分鐘)" class="form-control input-md" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                </div>
+                                <span class="help-block">例:20</span>
+                            </div>
+                            <br>
+                            <div id="time5" class="form-group" style="display:none">
+                                <label class="col-sm-6 control-label" for="jmlPemulaPutra" id="timeLabel5"></label>
+                                <div class="col-sm-3">
+                                    <input id="timeInput5" name="jmlPemulaPutra" type="text" placeholder="可接受通勤時間(分鐘)" class="form-control input-md" onkeyup="value=value.replace(/[^\d]/g,'') ">
+
+                                </div>
+                                <span class="help-block">例:20</span>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="doner">
+
+
+                            <h4 class="text-center">偏好測驗&nbsp;:&nbsp;選擇您比較願意租的房子</h4>
+                            <div class="list-group">
+
+                                <div href="#" class="list-group-item" style="background:rgba(255, 253, 230, 0.6)">
+
+                                    <div class="col-md-3" style="padding:0;">
+
+                                        <img id="Image1" class="img-fluid rounded mb-3 mb-md-0" src="data/image/h20.jpg" alt="" width="1000" height="1000">
+
+                                    </div>
+                                    <div class="col-sm-3" style="margin-left: 7%;">
+                                        <div id="chart1" class="linksLeft">
+                                            <canvas id="canvas1" style="width:100%;height:100%">                
+                                                                        </canvas>
+                                        </div>
+                                    </div>
+                                    <div class="linksRight">
+                                        <br>
+                                        <br>
+                                        <p class="ps" id="ps11" align="center"></p>
+                                        <br>
+                                        <p class="ps" id="ps12" align="center"></p>
+                                        <!--<label id="ps1" style='font-size:18px'>價錢:5000，坪數2</label>-->
+                                        <!--<table class="ftable">
+                                            <tbody>
+                                                <tr>
+                                                  <td>冷氣</td>
+                                                  <td >
+                                                      <img id = "f00" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>熱水器</td>
+                                                  <td >
+                                                      <img id = "f01" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>床具用品</td>
+                                                  <td>
+                                                      <img id = "f02" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>衣櫃</td>
+                                                  <td>
+                                                      <img id = "f03" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>冰箱</td>
+                                                  <td>
+                                                      <img id="f04" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>天然瓦斯</td>
+                                                  <td>
+                                                      <img id ="f05" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>乾溼分離</td>
+                                                  <td>
+                                                      <img id = "f06" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>沙發</td>
+                                                  <td>
+                                                      <img id ="f07" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>陽台</td>
+                                                  <td>
+                                                      <img id = "f08" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>電梯</td>
+                                                  <td>
+                                                      <img id = "f09" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>-->
+                                        <div style="display:table; text-align: right;">
+                                            <button type="button" class="btn btn-info" style="background:rgba(255, 253, 230, 0)" onclick="choose(1)">choose</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <div href="#" class="list-group-item" style="background:rgba(255, 253, 230, 0.6)">
+                                    <div class="col-md-3" style="padding:0;">
+
+                                        <img id="Image2" class="img-fluid rounded mb-3 mb-md-0" src="data/image/h21.jpg" alt="" width="1000" height="1000">
+
+                                    </div>
+                                    <div class="col-sm-3" style="margin-left: 7%;">
+                                        <div id="chart2" class="linksLeft">
+                                            <canvas id="canvas2" style="width:100%;height:100%">                
+                                                                        </canvas>
+                                        </div>
+
+                                    </div>
+                                    <div class="linksRight">
+                                        <br>
+                                        <br>
+                                        <p class="ps" id="ps21" align="center"></p>
+                                        <br>
+                                        <p class="ps" id="ps22" align="center"></p>
+                                        <!--<label id="ps2" style="font-size:18px">價錢:5000，坪數2</label>-->
+                                        <!--<table class="ftable">
+                                            <tbody>
+                                                <tr>
+                                                  <td>冷氣</td>
+                                                  <td>
+                                                      <img id = "f10" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>熱水器</td>
+                                                  <td>
+                                                      <img id = "f11" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>床具用品</td>
+                                                  <td>
+                                                      <img id = "f12" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>衣櫃</td>
+                                                  <td>
+                                                      <img id = "f13" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>冰箱</td>
+                                                  <td>
+                                                      <img id="f14" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>天然瓦斯</td>
+                                                  <td>
+                                                      <img id="f15" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>乾溼分離</td>
+                                                  <td>
+                                                      <img id = "f16" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>沙發</td>
+                                                  <td>
+                                                      <img id ="f17" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>陽台</td>
+                                                  <td>
+                                                      <img id = "f18" src="" width="40" height="40">
+                                                  </td>
+                                                  <td>電梯</td>
+                                                  <td>
+                                                      <img id = "f19" src="" width="40" height="40">
+                                                  </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>-->
+                                        <div style='display:table; text-align: right;'>
+                                            <button type="button" class="btn btn-info" style="background:rgba(255, 253, 230, 0)" onclick="choose(2)">choose</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="container" id="button_div">
+                                <a id="back_btn" href="#" data-toggle="tab" onclick="back()"><button  style="border-radius: 17px;border: 1px solid" type="button" class="btn btn-default btn-round">Back</button></a>
+                                <a id="next_btn" href="#" data-toggle="tab" onclick="next()"><button style="border-radius: 17px;border: 1px solid" type="button" class="btn btn-default btn-round">Next</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 id="p2title" style="text-align: center; display: none;">
+                房屋推薦結果
+            </h2>
+        </div>
+        <div class="container" id="p2" style="display:none ;">
+
+            <!--<h3><strong>Contact Us</strong></h3>-->
+
+            <div class="row">
+                <div class="col-md-5" id="map">
+                </div>
+                <div class="col-md-7" style="width:500px;height:500px;overflow:auto">
+                    <div id='ObjDisplay' class="list-group" style="background-color: rgb(251, 251, 250);border: 0px solid rgb(238, 238, 238)">
+
+
+
+
+                        <!--
+                        <div style="display:table">
+                            <label style="font-size:18px">&nbsp; 1.價錢:5000，坪數2</label>&nbsp;
+                            <button type="button" class="btn btn-outline-secondary" style="border: 1px solid;" onclick="detail(1)">詳細資訊</button>
+                        </div>
+                        <div class="list-group-item" style="cursor: pointer;" onclick="mapDisplay(1)">
+                            <div class="col-md-3" style="padding:0;">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="data/image/h20.jpg" width="1000" height="1000">
+                            </div>
+                            <div>
+                                <p>內部外部</p>
+                            </div>
+                        </div>
+                        <br>-->
+
+                        <!-- 彈出視窗 -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #696969; border:none; ">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 id="detailTitle" class="modal-title"></h4>
+                                    </div>
+                                    <div class="modal-body" style="background-color:#CD853F">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+
+                                                    <div class="card-body p-0" style="border-radius: 10px">
+                                                        <div id="modAddress"></div>
+                                                        <div class="row p-5">
+                                                            <div class="col-md-6">
+                                                                <img id="focusImage" src="data/image/h20.jpg" style="width:400px;height:300px;">
+                                                            </div>
+
+                                                        </div>
+                                                        <!--<div class="row pb-5 p-5">
+                                                            <div class="col-sm-6">
+                                                                <p class="font-weight-bold mb-4">Client Information</p>
+                                                                <p class="mb-1">John Doe, Mrs Emma Downson</p>
+                                                                <p>Acme Inc</p>
+                                                                <p class="mb-1">Berlin, Germany</p>
+                                                                <p class="mb-1">6781 45P</p>
+                                                            </div>
+
+                                                            <div class="col-sm-6 text-right">
+                                                                <p class="font-weight-bold mb-4">Payment Details</p>
+                                                                <p class="mb-1"><span class="text-muted">VAT: </span> 1425782</p>
+                                                                <p class="mb-1"><span class="text-muted">VAT ID: </span> 10253642</p>
+                                                                <p class="mb-1"><span class="text-muted">Payment Type: </span> Root</p>
+                                                                <p class="mb-1"><span class="text-muted">Name: </span> John Doe</p>
+                                                            </div>
+                                                        </div>-->
+
+
+                                                        <div id="modtable">
+                                                            <table class="ftable">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>冷氣</td>
+                                                                        <td>
+                                                                            <img id="f00" src="">
+                                                                        </td>
+                                                                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                                                        <td>熱水器</td>
+                                                                        <td>
+                                                                            <img id="f01" src="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>床具用品</td>
+                                                                        <td>
+                                                                            <img id="f02" src="">
+                                                                        </td>
+                                                                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                                                        <td>衣櫃</td>
+                                                                        <td>
+                                                                            <img id="f03" src="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>冰箱</td>
+                                                                        <td>
+                                                                            <img id="f04" src="">
+                                                                        </td>
+                                                                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                                                        <td>天然瓦斯</td>
+                                                                        <td>
+                                                                            <img id="f05" src="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>乾溼分離</td>
+                                                                        <td>
+                                                                            <img id="f06" src="">
+                                                                        </td>
+                                                                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                                                        <td>沙發</td>
+                                                                        <td>
+                                                                            <img id="f07" src="">
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>陽台</td>
+                                                                        <td>
+                                                                            <img id="f08" src="">
+                                                                        </td>
+                                                                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                                                        <td>電梯</td>
+                                                                        <td>
+                                                                            <img id="f09" src="">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div id="modchartdiv" class="row p-8" style="margin:0;padding:0;">
+                                                            <div id="test123"  style="padding-left: 0 !important;">
+                                                                <canvas id="radarChart" style="width:700px;height:700px">
+                    
+                                                                     </canvas>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="bg-dark text-white" style="text-align: center">
+                                                            <div class="py-3 px-5" style="text-align: center">
+                                                                <div id="modalps" class="h2 font-weight-light"></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer" style="background-color: #696969; border: none;">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <button onclick='generateObjDiv()'>看更多</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

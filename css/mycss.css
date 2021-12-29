@@ -1,0 +1,226 @@
+body {
+    background-image: url('../2.png');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.ftable img {
+    width: 2vw;
+    height: 2vw;
+}
+
+#button_div {
+    position:absolute;
+    bottom:30px;
+    width: 100%;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    font-size: 2.2rem !important;
+    font-family: "Microsoft JhengHei;" !important;
+    font-weight: 900 !important;
+}
+
+.linksLeft {
+    position: relative;
+    float: left;
+    width: 250px;
+}
+
+.linksRight {
+    position: relative;
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+.linksRight {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#map {
+    height: 500px;
+    width: 35% !important;
+}
+
+#p2 {
+    margin-top: 9vh;
+    background: #fff;
+    width: 65vw;
+    /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
+    background-color: #DEB887;
+    /*style="background:#FFFFFF;"*/
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.form-control {
+    height: 3rem !important;
+}
+
+#p2title {
+    color: #F5DEB3;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+    font-family: "微軟正黑體";
+    text-shadow: rgb(3, 3, 3) 7px 4px 4px;
+}
+
+.col-md-5 {
+    width: 60% !important;
+}
+
+.col-md-7 {
+    width: 40% !important;
+}
+
+.list-group {}
+
+.ps {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: "微軟正黑體";
+    margin-right: 50%;
+}
+
+.list-group-item {
+    position: relative;
+}
+
+.list-group-item .btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#p2 .list-group-item {
+    /*margin: 1rem 2rem 0 1rem;*/
+    /*background-color: #818B98;*/
+    border-radius: 10px;
+    border: 0;
+    padding-bottom: 2.2rem;
+    background-color: #FDF5E6;
+}
+
+#p2 .list-group-item .btn {
+    font-family: "微軟正黑體";
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 8rem;
+    height: 2.5rem;
+}
+
+.list-ps {
+    font-family: "微軟正黑體";
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+
+.p2listdiv {
+    border: 0;
+    background-color: #DEB887;
+}
+
+#p2 .col-md-7::-webkit-scrollbar {
+    width: 9px;
+}
+
+#p2 .col-md-7::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#p2 .col-md-7::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    /*background-image: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0.44, rgb(122,153,217)),
+                                       color-stop(0.72, rgb(73,125,189)),
+                                       color-stop(0.86, rgb(28,58,148)));*/
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(32, 178, 170)), color-stop(0.72, rgb(20, 125, 130)), color-stop(0.86, rgb(6, 52, 80)));
+}
+
+#modAddress {
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "微軟正黑體";
+    padding: 20px 5px 0px 5px;
+}
+
+​#modhr {
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+}
+
+#modtable {
+    display: flex;
+    justify-content: center;
+    padding: 5px 5px 20px 5px;
+}
+
+.ftable {
+    font-size: 2rem;
+    font-family: "微軟正黑體";
+    font-weight: 500;
+}
+
+.ftable img {
+    height: 5rem;
+    width: 5rem;
+}
+
+#modchartdiv {
+    display: flex;
+    /*justify-content: center;*/
+    padding: 5px 5px 30px 5px;
+}
+
+#radarChart {
+    padding-left: 5rem;
+    padding-bottom: 5rem;
+    width: 43rem !important;
+    height: 38rem !important;
+}
+
+.form-control {
+    background: rgb(255, 255, 255, 0) !important;
+    border-bottom-style: solid !important;
+    border-bottom-color: #8c90ca !important;
+}
+
+.input-group-addon {
+    background: rgba(141, 99, 21, 0.3) !important;
+}
+
+.btn-round {
+    background: rgb(255, 255, 255, 0) !important;
+}
+
+select {
+    font-weight: bolder !important;
+}
+
+select option {
+    background-color: rgb(20, 125, 130);
+    font-weight: bolder !important;
+}
+
+.btn-info {
+    color: rgb(20, 67, 85) !important;
+}
