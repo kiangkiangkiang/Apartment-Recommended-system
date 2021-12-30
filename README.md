@@ -70,16 +70,16 @@ After these, the recommended list will come up.
 
 <div class="row">
   <div class="column">
-    <img src="github_img/houseForu1.png"  style="width:30%">
+    <img src="github_img/houseForu1.png"  style="width:25%">
   </div>
   <div class="column">
-    <img src="github_img/houseForu2.png" style="width:30% ;float:right" align="right">   
+    <img src="github_img/houseForu2.png" style="width:25% ">   
   </div>
   <div class="column">
-    <img src="github_img/houseForu3.png"  style="width:30% ;float:right" align="right">
+    <img src="github_img/houseForu3.png"  style="width:25% ">
   </div>
   <div class="column">
-    <img src="github_img/houseForu4.png" style="width:30% ;float:right" align="right">    
+    <img src="github_img/houseForu4.png" style="width:25% ">    
   </div>
 </div>
 
