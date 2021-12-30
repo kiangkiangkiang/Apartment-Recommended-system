@@ -1,0 +1,17 @@
+<style>
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+ @media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
