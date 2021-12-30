@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="/github_img/myCSS.css">
+
 # House for you - Apartment Recommended System
 
 
@@ -53,7 +56,6 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 
 
 ## Usage
-<link rel="stylesheet" href="github_img/myCSS.css">
 
 (For center location method)
 
@@ -61,25 +63,28 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 
 2. Input time limits (you can accept) respectively of the places
 
+(For customized favor index)
+
 3. Choose the apartment you prefer for 5 times.
 
-(For customized favor index)
+
 
 After these, the recommended list will come up.
 
 
+
 <div class="row">
   <div class="column">
-    <img src="github_img/houseForu1.png"  style="width:25%">
+    <img src="github_img/houseForu1.png">
   </div>
   <div class="column">
-    <img src="github_img/houseForu2.png" style="width:25% ">   
+    <img src="github_img/houseForu2.png" >   
   </div>
   <div class="column">
-    <img src="github_img/houseForu3.png"  style="width:25% ">
+    <img src="github_img/houseForu3.png" >
   </div>
   <div class="column">
-    <img src="github_img/houseForu4.png" style="width:25% ">    
+    <img src="github_img/houseForu4.png" >    
   </div>
 </div>
 
