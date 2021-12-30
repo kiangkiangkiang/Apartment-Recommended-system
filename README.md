@@ -14,13 +14,14 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 
 <div class="row">
   <div class="column">
-    <img src="github_img/dataset1.png ;align="left"" alt="Snow" style="width:30%">
-    fjiaejrpeiajfpirejfpieferjfpireajf
+    <img src="github_img/dataset1.png ;align="left"" alt="Snow" style="width:30%">    
   </div>
+  fjiaejrpeiajfpirejfpieferjfpireajf
   <div class="column">
     <img src="github_img/dataset2.png ;align="left"" alt="Forest" style="width:30%">
-    fjirpfjiepajvprmeaprapfpfjoej[fj1[11111111111111111
+    
   </div>
+  fjirpfjiepajvprmeaprapfpfjoej[fj1[11111111111111111
 </div>
 
 
