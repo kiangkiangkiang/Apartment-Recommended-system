@@ -35,12 +35,51 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 ## Workflow
 
 <div>
-<img src="github_img/workflow_houseForu.png" style="width:20% ;float:right" align="right">    
-  <br><br><br><br><br><br><br><br><br><br><br>
+<img src="github_img/workflow_houseForu.png" style="width:20% ;float:right" align="right">   
+  
+  First, take the two datasets mentioned above, use <b> The World Geodetic System 1984 (WGS84) </b> to convert the 
+  Latitude and Longitude, and complete the combination of data that we use for analysis. 
+  <br><br>
+  Second, consider the distance between the apartment and working place, we designed a <b>center location method </b>to find the most 
+  suitable location for living. 
+  <br><br>
+  Further, implement <b>TFIDF</b> and <b>TFPDF</b> in furnitures and <b>Elo Rating System</b> in the image aesthetic level for quantify into the cost–performance. 
+  <br><br>
+  Final, combine the <b>kmeans</b> and <b>scatter-gather algorithms</b> to find the customized favor index for the cost–performance, and a complete apartment recommended
+  list will come into the view.
+  <br>  
   
 </div>
 
-## Algorithms
 
 ## Usage
+
+(For center location method)
+1. Input working places or destinations (recommend a complete addredd)
+
+2. Input time limits (you can accept) respectively of the places
+
+(For customized favor index)
+
+3. Choose the apartment you prefer for 5 times.
+
+After these, the recommended list will come up.
+
+<link rel="stylesheet" href="myCSS.css">
+
+<div class="row">
+  <div class="column">
+    <img src="houseForu1.png"  style="width:100%">
+  </div>
+  <div class="column">
+    <img src="houseForu2.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="houseForu3.png"  style="width:100%">
+  </div>
+  <div class="column">
+    <img src="houseForu4.png" style="width:100%">
+  </div>
+</div>
+
 
