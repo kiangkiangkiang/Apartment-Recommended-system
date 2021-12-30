@@ -12,25 +12,35 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 
 ## Datasets
 
-<div class="row">
-  <div class="column">
-    <img src="github_img/dataset1.png" alt="Snow" style="width:30% ;align="left"">    
-     fjiaejrpeiajfpirejfpieferjfpireajf
-  </div>
- 
-  <div class="column">
-    <img src="github_img/dataset2.png " alt="Forest" style="width:30% ;align="left"">
-    fjirpfjiepajvprmeaprapfpfjoej[fj1[11111111111111111
-    
-  </div>
+<div>
   
+  <img src="github_img/dataset1.png" style="width:20% ;float:left" align="left">    
+
+  We take advantage of multiple datasets in the Taiwan open datasets at https://data.gov.tw/dataset/6564, 
+  and combine with the same address, which will lead into a complete data table and benefit of analysis. 
+  In this way, we can facilitate the analysis of the <b>environment effective factor of the apartment</b>, 
+  where the user is favor of but has no understanding yet. Quantify the factor and include into the 
+  cost–performance ratio we design for the prediction.
+
+  
+  On the other hand, crawled the 591 (https://www.591.com.tw/) apartment-rented system using python until
+  3 May 2019, and 5362 records have been collected. For the preprocessing, the <b>Jeiba</b> to segment Chinese words
+  and <b>regular expression</b> was implemented. After the work, we will get the <b>internal effective factor of the 
+  apartment</b> that renter providing, like the image in website, furnitures, and discount, etc. Likewise, Quantify the factor 
+  and include into the cost–performance ratio we design for the prediction.
+
+
 </div>
-
-
-
 
 ## Workflow
 
+<div>
+<img src="github_img/workflow_houseForu.png" style="width:20% ;float:right" align="right">    
+  <br><br><br><br><br><br><br><br><br><br><br>
+  
+</div>
+
 ## Algorithms
 
-## Functionality
+## Usage
+
