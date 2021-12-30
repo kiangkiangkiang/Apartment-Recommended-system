@@ -12,6 +12,18 @@ Whenever you come to an alien environment, using "house for you" can solve what 
 
 ## Datasets
 
+<div class="row">
+  <div class="column">
+    <img src="github_img/dataset1.png" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="github_img/dataset2.png" alt="Forest" style="width:100%">
+  </div>
+</div>
+
+
+
+
 ## Workflow
 
 ## Algorithms
